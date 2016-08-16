@@ -13,17 +13,68 @@
 </head>
 
 <body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Manwell</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                <li><a href="#">Link</a></li>
+
+            </ul>
+            <form class="navbar-form navbar-left">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login/Logout <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ path('login') }}">Login</a></li>
+
+                        {% if is_granted('ROLE_USER') %}
+                        <li><a href="{{ path('logout') }}">Logout</a></li>
+                        {% endif %}
+
+                        <li role="separator" class="divider"></li>
+                        <li><a href="{{ path('sr_user_add') }}">Sign Up</a></li>
+                        {% if is_granted('ROLE_ADMIN') %}
+
+                        <li role="separator" class="divider"></li>
+                        <li><a href="{{ path('sonata_admin_dashboard') }}">Accés au Back Office</a></li>
+                        {% endif %}
+
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+
+
+
+
+
+
+
+
 <div class="container">
     <div id="header" class="jumbotron">
-        <a class="btn btn-primary btn-lg" href="{{ path('login') }}">
-            Login
-        </a>
-        <a class="btn btn-primary btn-lg" href="{{ path('logout') }}">
-            Logout
-        </a>
-        <a class="btn btn-primary btn-lg" href="{{ path('sr_user_add') }}">
-            Sign up
-        </a>
+
 
         <h1>Ma plateforme de Blog</h1>
 
