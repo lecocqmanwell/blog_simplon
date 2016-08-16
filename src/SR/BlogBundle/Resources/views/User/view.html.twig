@@ -1,0 +1,50 @@
+{% extends "SRBlogBundle::layout.html.twig" %}
+
+{% block sruser_body %}
+
+
+<h1>view du user</h1>
+
+
+
+    {% for key, user in user %}
+        <ul>
+            <li>
+                <p>le nom du User est :  {{ user.name }}</p>
+            </li>
+        <li>
+            <p>le prénom du User est :  {{ user.firstname }}</p>
+        </li>
+        <li>
+            <p>le mail du User est :  {{ user.mail }}</p>
+        </li>
+        <li>
+            <p>l'avatar du User est :  {{ user.avatar }}</p>
+        </li>
+
+        </ul>
+        {% if is_granted('ROLE_ADMIN') or app.user.id == user.id %}
+            <ul>
+                <li>
+                    <a href="{{ path('sr_user_edit', {'id': user.id}) }}">
+                    edit utilisateur
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{ path('sr_user_delete', {'id': user.id}) }}">
+                        supprimer utilisateur
+                    </a>
+                </li>
+            </ul>
+        {% endif %}
+    {% endfor %}
+
+
+        <a href="{{ path('sr_user_homepage') }}">
+            Liste des utilisateurs
+        </a>
+
+
+
+{% endblock %}

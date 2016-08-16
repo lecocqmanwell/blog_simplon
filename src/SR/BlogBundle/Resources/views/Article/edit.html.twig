@@ -1,0 +1,17 @@
+{% extends "SRBlogBundle::layout.html.twig" %}
+
+{% block title %}
+   Modifer un article - {{ parent() }}
+{% endblock %}
+
+{% block srarticle_body %}
+
+    <h2>Modifier un article</h2>
+
+    {{ include("SRBlogBundle:Article:form.html.twig") }}
+
+    <p>   Attention : cette annonce sera modifié directement
+        sur la page d'accueil après validation du formulaire.
+    </p>
+
+{% endblock %}

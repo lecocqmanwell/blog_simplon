@@ -1,0 +1,31 @@
+{% extends "SRBlogBundle::layout.html.twig" %}
+
+{% block title %}
+    Accueil - {{ parent() }}
+{% endblock %}
+
+{% block sruser_body %}
+
+    <h2>Liste des utilisateurs</h2>
+
+    <ul>
+        {% for user in listUsers %}
+            <li>
+                <a href="{{ path('sr_user_view', {'id': user.id}) }}">
+                    {{ user.name }}
+                </a>
+
+                {#par {{ article.author }},#}
+                {#le {{ article.date|date('d/m/Y') }}#}
+            </li>
+
+
+        {% else %}
+
+            <li>Pas (encore !) d'utilisateur</li>
+        {% endfor %}
+    </ul>
+
+
+
+{% endblock %}

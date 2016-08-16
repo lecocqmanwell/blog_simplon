@@ -1,0 +1,120 @@
+{% extends "SRBlogBundle::layout.html.twig" %}
+
+{% block title %}
+    Lecture d'un article - {{ parent() }}
+{% endblock %}
+
+{% block srarticle_body %}
+
+    <h2>{{ article.title }}</h2>
+    {#<i>Par {{ article.author }}, #}
+
+    <i>le {{ article.date|date('d/m/Y') }}</i>
+
+    {#{% if article.image is not null %}#}
+
+        {#<img src="{{ post.image.url }}" alt="{{ post.image.alt }}">#}
+
+    {#{% endif %}#}
+
+    <div class="well">
+        {{ article.content }}
+    </div>
+
+
+
+    <h3>Commentaires</h3>
+
+    {% for comment in article.comments %}
+        <strong>{{ comment.user.username }}</strong> said : {{ comment.content }}<br>
+    {% else %}
+        No comments yet.
+    {% endfor %}
+
+    {% if article.published != 1 %}
+article encore au brouillon
+    {% else %}
+
+    {% if is_granted('ROLE_ADMIN') or (app.user is not null )%}
+
+        <div class="well">
+            {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+
+
+            {# Les erreurs générales du formulaire. #}
+            {{ form_errors(form) }}
+
+            {{ form_label(form.content, "commentaire", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+
+            {{ form_errors(form.content) }}
+
+
+
+    {#and app.user.id == article.user.id) %}#}
+            <div class="col-sm-10">
+                {# Génération de l'input. #}
+                {{ form_widget(form.content, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+                {# Pour le bouton, pas de label ni d'erreur, on affiche juste le widget #}
+                {{ form_widget(form.save, {'attr': {'class': 'btn btn-primary'}}) }}
+
+                {# Génération automatique des champs pas encore écrits.
+                   Dans cet exemple, ce serait le champ CSRF (géré automatiquement par Symfony !)
+                   et tous les champs cachés (type « hidden »). #}
+
+                {{ form_rest(form) }}
+
+                {# Fermeture de la balise <form> du formulaire HTML #}
+                {{ form_end(form) }}
+        </div>
+
+    {% endif %}
+
+
+
+
+        {#{{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}#}
+        {#<div class="form-group">#}
+        {#{{ form_errors(commentForm.content) }}#}
+        {#{{ form_widget(commentForm.content, { 'attr':  {#}
+        {#'rows': '4',#}
+        {#'class': 'form-control',#}
+        {#'placeholder': 'Enter your comment'#}
+        {#}}) }}#}
+        {#</div>#}
+        {#<div class="form-group">#}
+        {#<input type="submit" class="btn btn-primary" value="Publish comment" />#}
+        {#</div>#}
+        {#{{ form_end(form, {'attr': {'class': 'form-horizontal'}}) }}#}
+    {% if is_granted('ROLE_ADMIN') or (app.user is not null and app.user.id == article.user.id) %}
+
+
+
+        <p>
+        <a href="{{ path('sr_article_edit', {'id': article.id}) }}" class="btn btn-default">
+            <i class="glyphicon glyphicon-edit"></i>
+            Modifier l'article
+        </a>
+        <a href="{{ path('sr_article_delete', {'id': article.id}) }}" class="btn btn-danger">
+            <i class="glyphicon glyphicon-trash"></i>
+            Supprimer l'article
+        </a>
+
+    {% endif %}
+
+    {% if app.user is null %}
+
+
+        pour ajouter un commentaire veuillez vous logger!!
+    {% endif %}
+
+        <a href="{{ path('sr_article_homepage') }}" class="btn btn-default">
+            <i class="glyphicon glyphicon-chevron-left"></i>
+            Retour à la liste
+        </a>
+    </p>
+
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends "SRBlogBundle::layout.html.twig" %}
+
+{% block title %}
+    Accueil - {{ parent() }}
+{% endblock %}
+
+{% block srarticle_body %}
+
+    <h2>Liste des articles publiés</h2>
+
+    {% for article in listArticles %}
+        <ul>
+            {% if article.published == 1 %}
+                <li>
+                    <a href="{{ path('sr_article_view', {'id': article.id}) }}">
+                           {{ article.title }}
+                    </a>
+                    par {{ article.user.username }},
+                    le {{ article.date|date('d/m/Y') }}
+                </li>
+
+            {% endif %}
+        </ul>
+    {% endfor %}
+
+
+    {% if is_granted('ROLE_USER')  %}
+            <h2>Article non publiés</h2>
+                {% for article in listArticles %}
+                    {% if article.published == 0 %}
+                        {% if  is_granted('ROLE_ADMIN') or app.user.id == article.user.id %}
+                        <ul>
+                        <li>
+                            <a href="{{ path('sr_article_view', {'id': article.id}) }}">
+                                {{ article.title }}
+                            </a>
+                            par {{ article.user.username }},
+                            le {{ article.date|date('d/m/Y') }}
+                        </li>
+                        </ul>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+        {% endif %}
+
+
+
+
+
+
+
+
+        {#{% if article == null %}#}
+            {#<li>Pas (encore !) d'articles</li>#}
+        {#{% endif %}#}
+
+
+
+{% endblock %}

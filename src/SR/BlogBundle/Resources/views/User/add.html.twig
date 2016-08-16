@@ -1,0 +1,17 @@
+{% extends "SRBlogBundle::layout.html.twig" %}
+
+{% block title %}
+    Ajouter un article - {{ parent() }}
+{% endblock %}
+
+{% block sruser_body %}
+
+    <h2>Ajouter un user</h2>
+
+    {{ include("SRBlogBundle:User:form.html.twig") }}
+
+    <p>   Attention : cette annonce sera ajoutée directement
+        sur la page d'accueil après validation du formulaire.
+    </p>
+
+{% endblock %}

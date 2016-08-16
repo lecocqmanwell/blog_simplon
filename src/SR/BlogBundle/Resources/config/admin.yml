@@ -1,0 +1,22 @@
+services:
+    app.admin.user:
+        class: SR\BlogBundle\Admin\UserAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "User" }
+        arguments:
+            - ~
+            - SR\BlogBundle\Entity\User
+            - ~
+        calls:
+            - [ setTranslationDomain, [SR\BlogBundle]]
+
+    app.admin.article:
+       class: SR\BlogBundle\Admin\ArticleAdmin
+       tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Article" }
+       arguments:
+            - ~
+            - SR\BlogBundle\Entity\Article
+            - ~
+       calls:
+            - [ setTranslationDomain, [SR\BlogBundle]]

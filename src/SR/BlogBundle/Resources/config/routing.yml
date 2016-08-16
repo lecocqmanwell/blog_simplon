@@ -1,0 +1,58 @@
+sr_article_homepage:
+    path:     /article
+    defaults: { _controller: SRBlogBundle:Article:index }
+
+sr_article_add:
+    path:     /article/add
+    defaults: { _controller: SRBlogBundle:Article:add }
+
+sr_article_edit:
+    path:     /article/edit/{id}
+    defaults: { _controller: SRBlogBundle:Article:edit }
+
+
+sr_article_view:
+    path:     /article/view/{id}
+    defaults: { _controller: SRBlogBundle:Article:view }
+
+
+sr_article_delete:
+    path:      /article/delete/{id}
+    defaults:
+        _controller: SRBlogBundle:Article:delete
+    requirements:
+        id: \d+
+
+login:
+    path: /login
+    defaults:
+        _controller: SRBlogBundle:Security:login
+
+login_check:
+    path: /login_check
+
+logout:
+    path: /logout
+
+sr_user_view:
+    path:     /user/view/{id}
+    defaults: { _controller: SRBlogBundle:User:view }
+
+sr_user_add:
+    path:     /user/add
+    defaults: { _controller: SRBlogBundle:User:add }
+
+sr_user_delete:
+    path:      /user/delete/{id}
+    defaults:
+        _controller: SRBlogBundle:User:delete
+    requirements:
+        id: \d+
+
+sr_user_homepage:
+    path:     /user
+    defaults: { _controller: SRBlogBundle:User:index }
+
+sr_user_edit:
+    path:     /user/edit/{id}
+    defaults: { _controller: SRBlogBundle:User:edit }

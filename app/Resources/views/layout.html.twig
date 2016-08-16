@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{% block title %}SR Blog{% endblock %}</title>
+
+    {% block stylesheets %}
+        {# On charge le CSS de bootstrap depuis le site directement #}
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    {% endblock %}
+</head>
+
+<body>
+<div class="container">
+    <div id="header" class="jumbotron">
+        <a class="btn btn-primary btn-lg" href="{{ path('login') }}">
+            Login
+        </a>
+        <a class="btn btn-primary btn-lg" href="{{ path('logout') }}">
+            Logout
+        </a>
+        <a class="btn btn-primary btn-lg" href="{{ path('sr_user_add') }}">
+            Sign up
+        </a>
+
+        <h1>Ma plateforme de Blog</h1>
+
+
+    </div>
+
+    <div class="row">
+        <div id="menu" class="col-md-3">
+            <h3>Les articles</h3>
+            <ul class="nav nav-pills nav-stacked">
+
+                    <li><a href="{{ path('sr_article_homepage') }}">Accueil</a></li>
+                {% if is_granted('ROLE_USER') %}
+                    <li><a href="{{ path('sr_article_add') }}">Ajouter un article</a></li>
+                {% endif %}
+
+                {% if is_granted('ROLE_ADMIN')  %}
+                    <li><a href="{{ path('sr_user_homepage') }}">Liste des utilisateurs</a></li>
+                {% endif %}
+            </ul>
+
+
+        </div>
+        <div id="content" class="col-md-9">
+            {% block body %}
+            {% endblock %}
+        </div>
+    </div>
+
+    <hr>
+
+    <footer>
+        <p>The sky's the limit © {{ 'now'|date('Y') }} and beyond. By Manwell</p>
+    </footer>
+</div>
+
+{% block javascripts %}
+    {# Ajoutez ces lignes JavaScript si vous comptez vous servir des fonctionnalités du bootstrap Twitter #}
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+{% endblock %}
+
+</body>
+</html>
