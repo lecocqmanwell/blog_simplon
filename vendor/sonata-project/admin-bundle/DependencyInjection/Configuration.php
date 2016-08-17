@@ -71,8 +71,9 @@ class Configuration implements ConfigurationInterface
                     ->end()
                 ->end()
 
-                ->scalarNode('title')->defaultValue('Sonata Admin')->cannotBeEmpty()->end()
-                ->scalarNode('title_logo')->defaultValue('bundles/sonataadmin/logo_title.png')->cannotBeEmpty()->end()
+                ->scalarNode('title')->defaultValue('Manwell Blog')->cannotBeEmpty()->end()
+//                ->scalarNode('title_logo')->defaultValue('bundles/sonataadmin/logo_title.png')->cannotBeEmpty()->end()
+                ->scalarNode('title_logo')->defaultValue('')->cannotBeEmpty()->end()
                 ->arrayNode('options')
                     ->addDefaultsIfNotSet()
                     ->children()

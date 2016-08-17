@@ -17,6 +17,22 @@
         </div>
     </div>
 
+    {% if is_granted('ROLE_ADMIN') or (app.user is not null and app.user.id == article.user.id) %}
+
+
+                <p>
+                    <a href="{{ path('sr_article_edit', {'id': article.id}) }}" class="btn btn-default">
+                        <i class="glyphicon glyphicon-edit"></i>
+                        Modifier l'article
+                    </a>
+                    <a href="{{ path('sr_article_delete', {'id': article.id}) }}" class="btn btn-danger">
+                        <i class="glyphicon glyphicon-trash"></i>
+                        Supprimer l'article
+                    </a>
+                </p>
+
+    {% endif %}
+
     <h3>Commentaires</h3>
 
 
@@ -29,8 +45,14 @@
                      {{ comment.content }}
                     </div>
                 </div>
-    {% else %}
-        Aucun commentaires pour le moment! Soyez le premier à en écrire un!
+             {% else %}
+
+             <div class="panel panel-default">
+                 <div class="panel-heading">
+                    Aucun commentaires pour le moment! Soyez le premier à en écrire un!
+                </div>
+             </div>
+
     {% endfor %}
 
     {% if article.published != 1 %}
@@ -88,34 +110,21 @@ article encore au brouillon
         {#<input type="submit" class="btn btn-primary" value="Publish comment" />#}
         {#</div>#}
         {#{{ form_end(form, {'attr': {'class': 'form-horizontal'}}) }}#}
-    {% if is_granted('ROLE_ADMIN') or (app.user is not null and app.user.id == article.user.id) %}
 
-
-
-        <p>
-        <a href="{{ path('sr_article_edit', {'id': article.id}) }}" class="btn btn-default">
-            <i class="glyphicon glyphicon-edit"></i>
-            Modifier l'article
-        </a>
-        <a href="{{ path('sr_article_delete', {'id': article.id}) }}" class="btn btn-danger">
-            <i class="glyphicon glyphicon-trash"></i>
-            Supprimer l'article
-        </a>
-
-    {% endif %}
 
     {% if app.user is null %}
 
 
-        pour ajouter un commentaire veuillez vous logger!!
+        <div class="panel panel-default">
+            <div class="panel panel-body">
+                  pour ajouter un commentaire veuillez vous logger!!
     {% endif %}
-
-        <a href="{{ path('sr_article_homepage') }}" class="btn btn-default">
-            <i class="glyphicon glyphicon-chevron-left"></i>
-            Retour à la liste
-        </a>
-    </p>
-
+                <a href="{{ path('sr_article_homepage') }}" class="btn btn-default">
+                    <i class="glyphicon glyphicon-chevron-left"></i>
+                    Retour à la liste
+                </a>
+            </div>
+        </div>
     {% endif %}
 
 {% endblock %}
