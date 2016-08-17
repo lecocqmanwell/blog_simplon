@@ -15,7 +15,10 @@ sr_article_view:
     path:     /article/view/{id}
     defaults: { _controller: SRBlogBundle:Article:view }
 
-
+sr_article_home:
+    path: /home
+    defaults:
+        _controller: SRBlogBundle:Article:home
 
 
 sr_article_delete:

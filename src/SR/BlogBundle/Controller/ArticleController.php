@@ -230,6 +230,14 @@ class ArticleController extends Controller
         ));
     }
 
+    /**
+     * @return mixed
+     */
+    public function homeAction()
+    {
+        return $this->render('SRBlogBundle:Article:home.html.twig');
+    }
+
 
 }
 

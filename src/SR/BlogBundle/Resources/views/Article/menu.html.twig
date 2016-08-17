@@ -1,5 +1,16 @@
 
 <ul class="nav nav-pills nav-stacked">
+
+
+
+
+
+
+
+
+
+<h4>Retrouvez ici les derniers articles postés par notre communauté.</h4>
+
     {% for article in listArticles %}
         <li>
             <a href="{{ path('sr_article_view', {'id': article.id}) }}">

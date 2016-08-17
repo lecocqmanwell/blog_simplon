@@ -13,7 +13,7 @@
 </head>
 
 <body>
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -23,13 +23,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{ path('sr_article_homepage') }}">Manwell</a>
+            <a class="navbar-brand" href="{{ path('sr_article_home') }}">Manwell</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="{{ path('sr_article_add') }}">Contribuer au blog/Créer un article<span class="sr-only">(current)</span></a></li>
+                <li class="active"><a href="{{ path('sr_article_add') }}">Contribuer au blog/Créer un article  <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></a></li>
                 <li><a href="#">Link</a></li>
 
             </ul>
@@ -83,7 +83,7 @@
 
         <div id="menu" class=" well well-lg col-md-3">
 
-            <h4>Derniers articles</h4>
+
             {{ render(controller("SRBlogBundle:Article:menu", {'limit': 3})) }}
 
 

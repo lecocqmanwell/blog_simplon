@@ -6,29 +6,31 @@
 
 {% block srarticle_body %}
 
-    <h2>{{ article.title }}</h2>
-    {#<i>Par {{ article.author }}, #}
-
-    <i>le {{ article.date|date('d/m/Y') }}</i>
-
-    {#{% if article.image is not null %}#}
-
-        {#<img src="{{ post.image.url }}" alt="{{ post.image.alt }}">#}
-
-    {#{% endif %}#}
-
-    <div class="well">
-        {{ article.content }}
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3>{{ article.title }}</h3>
+            <i>Ecrit par <strong>{{ article.user.username }}</strong>,</i>
+            <i>le {{ article.date|date('d/m/Y') }}</i>
+        </div>
+        <div class="panel-body">
+            {{ article.content }}
+        </div>
     </div>
-
-
 
     <h3>Commentaires</h3>
 
-    {% for comment in article.comments %}
-        <strong>{{ comment.user.username }}</strong> said : {{ comment.content }}<br>
+
+            {% for comment in article.comments %}
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <strong>{{ comment.user.username }}</strong>:
+                    </div>
+                     <div class="panel-body">
+                     {{ comment.content }}
+                    </div>
+                </div>
     {% else %}
-        No comments yet.
+        Aucun commentaires pour le moment! Soyez le premier à en écrire un!
     {% endfor %}
 
     {% if article.published != 1 %}
@@ -40,11 +42,10 @@ article encore au brouillon
         <div class="well">
             {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
 
-
             {# Les erreurs générales du formulaire. #}
             {{ form_errors(form) }}
 
-            {{ form_label(form.content, "commentaire", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+            {{ form_label(form.content, "Ajouter votre commentaire", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
 
             {{ form_errors(form.content) }}
 
