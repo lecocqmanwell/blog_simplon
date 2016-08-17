@@ -59,13 +59,13 @@ class User implements UserInterface, \Serializable
      */
     private $password;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="avatar", type="string", length=255)
-     * @ORM\JoinColumn(nullable=true)
-     */
-    private $avatar;
+//    /**
+//     * @var string
+//     *
+//     * @ORM\Column(name="avatar", type="string", length=255)
+//     * @ORM\JoinColumn(nullable=false)
+//     */
+//    private $avatar;
 
     /**
      * @ORM\Column(name="roles", type="array", nullable=true)
@@ -292,10 +292,9 @@ class User implements UserInterface, \Serializable
             $this->password,
             $this->name,
             $this->firstname,
-            $this->avatar,
+//            $this->avatar,
             $this->mail,
-            // see section on salt below
-            // $this->salt,
+
         ));
     }
 
@@ -308,10 +307,9 @@ class User implements UserInterface, \Serializable
             $this->password,
             $this->name,
             $this->firstname,
-            $this->avatar,
+//            $this->avatar,
             $this->mail,
-            // see section on salt below
-            // $this->salt
+
             ) = unserialize($serialized);
     }
 

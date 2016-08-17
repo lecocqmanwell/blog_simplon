@@ -195,7 +195,7 @@ class ArticleController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $listArticles = $em->getRepository('SRBlogBundle:Article')->findBy(
-            array(),                 // Pas de critère
+            array('published' => '1'),
             array('date' => 'desc'), // On trie par date décroissante
             $limit,                  // On sélectionne $limit annonces
             0                        // À partir du premier

@@ -71,9 +71,6 @@ article encore au brouillon
 
             {{ form_errors(form.content) }}
 
-
-
-    {#and app.user.id == article.user.id) %}#}
             <div class="col-sm-10">
                 {# Génération de l'input. #}
                 {{ form_widget(form.content, {'attr': {'class': 'form-control'}}) }}
@@ -115,16 +112,12 @@ article encore au brouillon
     {% if app.user is null %}
 
 
-        <div class="panel panel-default">
-            <div class="panel panel-body">
+        <div class="well panel panel-default">
+            <div class="panel panel-heading">
                   pour ajouter un commentaire veuillez vous logger!!
-    {% endif %}
-                <a href="{{ path('sr_article_homepage') }}" class="btn btn-default">
-                    <i class="glyphicon glyphicon-chevron-left"></i>
-                    Retour à la liste
-                </a>
             </div>
         </div>
+    {% endif %}
     {% endif %}
 
 {% endblock %}

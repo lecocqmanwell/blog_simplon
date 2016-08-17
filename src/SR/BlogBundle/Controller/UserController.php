@@ -5,6 +5,7 @@ namespace SR\BlogBundle\Controller;
 use SR\BlogBundle\Entity\User;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -69,9 +70,9 @@ class UserController extends Controller
             ->add('username', TextType::class)
             ->add('name', TextType::class)
             ->add('firstname', TextType::class)
-            ->add('mail', TextType::class)
+            ->add('mail',EmailType::class)
             ->add('password', PasswordType::class)
-            ->add('avatar', TextType::class)
+//            ->add('avatar', TextType::class)
             ->add('save', SubmitType::class);
 
         // À partir du formBuilder, on génère le formulaire
