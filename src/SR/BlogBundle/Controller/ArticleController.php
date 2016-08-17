@@ -191,6 +191,21 @@ class ArticleController extends Controller
         return $this->redirectToRoute('sr_article_homepage');
     }
 
+    public function menuAction($limit)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $listArticles = $em->getRepository('SRBlogBundle:Article')->findBy(
+            array(),                 // Pas de critère
+            array('date' => 'desc'), // On trie par date décroissante
+            $limit,                  // On sélectionne $limit annonces
+            0                        // À partir du premier
+        );
+        return $this->render('SRBlogBundle:Article:menu.html.twig', array(
+            'listArticles' => $listArticles
+        ));
+    }
+
+
 
     /**
      * @Security("has_role('ROLE_USER')")

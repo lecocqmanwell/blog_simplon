@@ -16,6 +16,8 @@ sr_article_view:
     defaults: { _controller: SRBlogBundle:Article:view }
 
 
+
+
 sr_article_delete:
     path:      /article/delete/{id}
     defaults:
