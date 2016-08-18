@@ -29,7 +29,7 @@ class UserController extends Controller
 //     */
     public function indexAction()
     {
-        $listUsers = $this->getDoctrine()
+          $listUsers = $this->getDoctrine()
             ->getManager()
             ->getRepository('SRBlogBundle:User' )
             ->findAll();

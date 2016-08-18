@@ -74,9 +74,8 @@ class ArticleController extends Controller
             $comment->setUser($this->getUser());
             $em->persist($comment);
             $em->flush();
-
         }
-        
+
         return $this->render('SRBlogBundle:Article:view.html.twig', array(
             'article' => $article,
             'form' => $form->createView()));
@@ -127,7 +126,8 @@ class ArticleController extends Controller
                     $article->setDate(new \DateTime());
                     $em->persist($article);
                     $em->flush();
-
+VarDumper::dump($variable);
+die;
                     $request->getSession()->getFlashBag()->add('notice', 'Article bien enregistrée.');
                     // On redirige vers la page de visualisation de l'annonce nouvellement créée
                     return $this->redirectToRoute('sr_article_view', array('id' => $article->getId()));

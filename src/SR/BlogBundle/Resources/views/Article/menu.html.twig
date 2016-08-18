@@ -1,20 +1,5 @@
 
 <ul class="nav nav-pills nav-stacked">
-
-
-    <li>
-        <a href="{{ path('sr_article_homepage') }}" type="button" class="btn btn-default">
-            Voir tous les articles
-            <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
-        </a>
-    </li>
-
-
-
-
-
-<h4>Retrouvez ici les derniers articles postés par notre communauté.</h4>
-
     {% for article in listArticles %}
         <li>
             <a href="{{ path('sr_article_view', {'id': article.id}) }}">

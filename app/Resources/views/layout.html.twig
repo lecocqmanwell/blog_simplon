@@ -8,69 +8,56 @@
 
     {% block stylesheets %}
         {# On charge le CSS de bootstrap depuis le site directement #}
+        <link rel="stylesheet" href="{{ asset('bundles/srblog/css/main.css') }}" />
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     {% endblock %}
 </head>
 
 <body>
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="{{ path('sr_article_home') }}">Manwell</a>
-        </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="{{ path('sr_article_add') }}">Contribuer au blog/Créer un article  <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></a></li>
-            </ul>
+<div id="sidebar">
+    <!-- Logo -->
+    <h1 id="logo"><a href="{{ path('sr_article_home') }}">MANWELL</a></h1>
+    <!-- Nav -->
+    <nav id="nav">
+        <ul>
+            <li><a href="{{ path('sr_article_add') }}">Ajouter un Article</a></li>
+            <li><a href="{{ path('sr_article_homepage') }}">Voir tous les articles parus</a></li>
+        </ul>
+    </nav>
 
-            <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
-                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Login/Logout <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="{{ path('login') }}">Login</a></li>
+    <!-- Recent Posts -->
+    <section class="box recent-posts">
+        <header>
+            <h2>Articles Récents</h2>
+        </header>
+        <ul>
+            {{ render(controller("SRBlogBundle:Article:menu", {'limit': 3})) }}
+        </ul>
+    </section>
 
-                        {% if is_granted('ROLE_USER') %}
-                        <li><a href="{{ path('logout') }}">Logout</a></li>
-                        {% endif %}
+    <!-- Recent Comments -->
+    <section class="box recent-comments">
+        <header>
+            <h2>Login</h2>
+        </header>
+        <ul>
+            <li><a href="{{ path('login') }}">Login</a></li>
+            {% if is_granted('ROLE_USER') %}
+                <li><a href="{{ path('logout') }}">Logout</a></li>
+            {% endif %}
 
-                        <li role="separator" class="divider"></li>
-                        <li><a href="{{ path('sr_user_add') }}">Sign Up</a></li>
-                        {% if is_granted('ROLE_ADMIN') %}
-
-                        <li role="separator" class="divider"></li>
-                        <li><a href="{{ path('sonata_admin_dashboard') }}">Accés au Back Office</a></li>
-                        {% endif %}
-
-                    </ul>
-                </li>
-            </ul>
-        </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-</nav>
+            <li><a href="{{ path('sr_user_add') }}">Sign Up</a></li>
+            {% if is_granted('ROLE_ADMIN') %}
 
 
-
-
-
-
-
-
-
+                <li><a href="{{ path('sonata_admin_dashboard') }}">Accés au Back Office</a></li>
+            {% endif %}
+        </ul>
+    </section>
+</div>
 <div class="container">
     <div id="header" class="jumbotron">
-
-
-
-
         <h1>Ma plateforme de Blog</h1>
 
 
@@ -79,13 +66,6 @@
     <div class="row">
 
 
-        <div id="menu" class=" well well-lg col-md-3">
-
-
-            {{ render(controller("SRBlogBundle:Article:menu", {'limit': 3})) }}
-
-
-        </div>
         <div id="content" class="col-md-9">
             {% block body %}
             {% endblock %}
