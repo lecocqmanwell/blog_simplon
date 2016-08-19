@@ -18,77 +18,82 @@
 <body>
 
 <div id="wrapper">
-<!-- Header -->
-<header id="header">
-    <h1><a href="#">Manwell</a></h1>
-    <nav class="links">
-        <ul>
-            <li><a href="{{ path('sr_article_add') }}">Ajouter un article</a></li>
-            <li><a href="{{ path('sr_article_homepage') }}">Voir tous les articles</a></li>
+    <!-- Header -->
+    <header id="header">
+        <h1><a href="{{ path('sr_article_home') }}">Manwell</a></h1>
+        <nav class="links">
+            <ul>
+                <li><a href="{{ path('sr_article_add') }}">Ajouter un article</a></li>
+                <li><a href="{{ path('sr_article_homepage') }}">Voir tous les articles</a></li>
 
-        </ul>
-    </nav>
-    <nav class="main">
-        <ul>
+            </ul>
+        </nav>
+        <nav class="main">
+            <ul>
 
-            <li class="menu">
-                <a class="fa-bars" href="#menu">Menu</a>
-            </li>
-        </ul>
-    </nav>
-</header>
+                <li class="menu">
+                    <a class="fa-bars" href="#menu">Menu</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
-<!-- Menu -->
-<section id="menu">
+    <!-- Menu -->
+    <section id="menu">
 
-
-
-    <!-- Links -->
-    <section>
+        <!-- Links -->
+        <section>
             <ul class="actions vertical">
                 <li><a href="{{ path('login') }}" class="button big fit">Log In</a></li>
             </ul>
 
-        {% if is_granted('ROLE_USER') %}
-        <ul class="actions vertical">
-            <li><a href="{{ path('logout') }}" class="button big fit">Log Out</a></li>
-        </ul>
-        {% endif %}
+            {% if is_granted('ROLE_USER') %}
+                <ul class="actions vertical">
+                    <li><a href="{{ path('logout') }}" class="button big fit">Log Out</a></li>
+                </ul>
+            {% endif %}
 
 
-        {% if is_granted('ROLE_ADMIN') %}
-        <ul class="actions vertical">
-            <li><a href="{{ path('sonata_admin_dashboard') }}" class="button big fit">Back-Office</a></li>
-        </ul>
-        {% endif %}
+            {% if is_granted('ROLE_ADMIN') %}
+                <ul class="actions vertical">
+                    <li><a href="{{ path('sonata_admin_dashboard') }}" class="button big fit">Back-Office</a></li>
+                </ul>
+            {% endif %}
+        </section>
+        <!-- Actions -->
     </section>
-    <!-- Actions -->
-</section>
-
-<div class="container">
-
-            {% block body %}
-            {% endblock %}
 
 
-    <footer>
-        <p>The sky's the limit © {{ 'now'|date('Y') }} and beyond. By Manwell</p>
-    </footer>
-</div>
+    {{ render(controller('SRBlogBundle:Article:menu', {'limit':3})) }}
 
-{% block javascripts %}
-    {# Ajoutez ces lignes JavaScript si vous comptez vous servir des fonctionnalités du bootstrap Twitter #}
-    {#<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>#}
-    {#<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>#}
-    <!-- Scripts -->
-    <script src="{{ asset('bundles/srblog/js/jquery.min.js') }}"></script>
-    <script src="{{ asset('bundles/srblog/js/skel.min.js') }}"></script>
-    <script src="{{ asset('bundles/srblog/js/util.js') }}"></script>
-    <!--[if lte IE 8]><script src="{{ asset('bundles/srblog/js/ie/respond.min.js') }}></script><![endif]-->
-    <script src="{{ asset('bundles/srblog/js/main.js') }}"></script>
+    <div class="container">
+        <div id="main">
 
-{% endblock %}
 
+
+
+        {% block body %}
+        {% endblock %}
+
+        </div>
+        <footer>
+            <p>The sky's the limit © {{ 'now'|date('Y') }} and beyond. By Manwell</p>
+        </footer>
     </div>
+
+    {% block javascripts %}
+        {# Ajoutez ces lignes JavaScript si vous comptez vous servir des fonctionnalités du bootstrap Twitter #}
+        {#<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>#}
+        {#<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>#}
+        <!-- Scripts -->
+        <script src="{{ asset('bundles/srblog/js/jquery.min.js') }}"></script>
+        <script src="{{ asset('bundles/srblog/js/skel.min.js') }}"></script>
+        <script src="{{ asset('bundles/srblog/js/util.js') }}"></script>
+        <!--[if lte IE 8]><script src="{{ asset('bundles/srblog/js/ie/respond.min.js') }}></script><![endif]-->
+        <script src="{{ asset('bundles/srblog/js/main.js') }}"></script>
+
+    {% endblock %}
+
+</div>
 </body>
 </html>

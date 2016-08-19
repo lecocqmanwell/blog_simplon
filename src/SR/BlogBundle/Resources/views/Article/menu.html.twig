@@ -1,10 +1,20 @@
+<section id="sidebar" class="sidebar_layout">
+    <section>
 
-<ul class="nav nav-pills nav-stacked">
-    {% for article in listArticles %}
-        <li>
-            <a href="{{ path('sr_article_view', {'id': article.id}) }}">
-                {{ article.title }}
-            </a>
-        </li>
-    {% endfor %}
-</ul>
+            <ul class="posts">
+                {% for article in listArticles %}
+                <li>
+                    <article>
+                        <header>
+                            <h3><a href="{{ path('sr_article_view', {'id': article.id}) }}">{{ article.title }}</a></h3>
+                            <time class="published" datetime="2015-10-20">October 20, 2015</time>
+                            <p>ecrit par:{{ article.user.username }}</p>
+                            <p>le {{ article.date|date ('d,m,Y') }}</p>
+                        </header>
+                    </article>
+                </li>
+                {% endfor %}
+            </ul>
+
+    </section>
+</section>

@@ -126,8 +126,7 @@ class ArticleController extends Controller
                     $article->setDate(new \DateTime());
                     $em->persist($article);
                     $em->flush();
-VarDumper::dump($variable);
-die;
+
                     $request->getSession()->getFlashBag()->add('notice', 'Article bien enregistrée.');
                     // On redirige vers la page de visualisation de l'annonce nouvellement créée
                     return $this->redirectToRoute('sr_article_view', array('id' => $article->getId()));
@@ -191,22 +190,6 @@ die;
         return $this->redirectToRoute('sr_article_homepage');
     }
 
-    public function menuAction($limit)
-    {
-        $em = $this->getDoctrine()->getManager();
-        $listArticles = $em->getRepository('SRBlogBundle:Article')->findBy(
-            array('published' => '1'),
-            array('date' => 'desc'), // On trie par date décroissante
-            $limit,                  // On sélectionne $limit annonces
-            0                        // À partir du premier
-        );
-        return $this->render('SRBlogBundle:Article:menu.html.twig', array(
-            'listArticles' => $listArticles
-        ));
-    }
-
-
-
     /**
      * @Security("has_role('ROLE_USER')")
      */
@@ -230,11 +213,31 @@ die;
         ));
     }
 
+
+
+    public function menuAction($limit)
+    {
+        $limit = 3;
+        $em = $this->getDoctrine()->getManager();
+        $listArticles = $em->getRepository('SRBlogBundle:Article')->findBy(
+            array('published' => '1'),
+            array('date' => 'desc'), // On trie par date décroissante
+            $limit,                  // On sélectionne $limit annonces
+            0                        // À partir du premier
+        );
+        return $this->render('SRBlogBundle:Article:menu.html.twig', array(
+            'listArticles' => $listArticles
+        ));
+    }
+
     /**
      * @return mixed
      */
     public function homeAction()
     {
+
+
+
         return $this->render('SRBlogBundle:Article:home.html.twig');
     }
 
