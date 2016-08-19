@@ -10,8 +10,10 @@
 
     {{ include("SRBlogBundle:Article:form.html.twig") }}
 
-    <p>   Attention : cette annonce sera ajoutée directement
-        sur la page d'accueil après validation du formulaire.
+    <p>   Attention : cette article sera ajoutée directement
+        sur la page d'accueil après validation du formulaire, sauf si bien-sur vous ne cochez pas la case published...
+
     </p>
+    <p> Si vous ne cochez pas la case Published, il sera enregistré en brouillon (et donc non -publié).</p>
 
 {% endblock %}

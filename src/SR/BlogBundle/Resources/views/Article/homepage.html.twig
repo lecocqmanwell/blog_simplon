@@ -36,7 +36,7 @@
                 <div class="row">
                     <div class="6u 12u$(medium)">
                         {% for article in listArticles %}
-                            {% if article.published == 0 %}
+                            {% if article.published != 1 %}
                                 {% if  is_granted('ROLE_ADMIN') or app.user.id == article.user.id %}
                                 <ul>
                                 <li>
@@ -54,7 +54,6 @@
                 </div>
 
         {% endif %}
-
 
 
 

@@ -1,13 +1,28 @@
 .fa-bars::before {
     content: "\f007";
 }
-.sidebar_layout{
-    position: absolute;
-    left: 3em;
-    top: 20em;
-}
-.container{
-    position: relative;
-    left:7em;
 
+/*.well .form-horizontal .date{*/
+    /*display: none;*/
+/*}*/
+
+.btn-primary{
+    background-color: #F4F4F4;
+    border-color: #F4F4F4;
+}
+.btn-primary:hover{
+    background-color: #F4F4F4;
+    border-color: #F4F4F4;
+    color: black;
+}
+.form-group .checkbox input{
+    margin-right: 0em;
+    opacity: 1;
+    width:20px;
+    height:20px;
+}
+.form-date-hidden
+/*.form-group .control-label*/
+{
+    display: none;
 }

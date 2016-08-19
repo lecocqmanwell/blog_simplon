@@ -1,15 +1,15 @@
-<section id="sidebar" class="sidebar_layout">
+<section id="sidebar" class="sidebar_layout" xmlns="http://www.w3.org/1999/html">
     <section>
-
+<h2>Derniers articles</br> parus</h2>
             <ul class="posts">
                 {% for article in listArticles %}
                 <li>
                     <article>
                         <header>
                             <h3><a href="{{ path('sr_article_view', {'id': article.id}) }}">{{ article.title }}</a></h3>
-                            <time class="published" datetime="2015-10-20">October 20, 2015</time>
+                            <time class="published" >Le {{ article.date|date ('d,m,Y') }}</time>
                             <p>ecrit par:{{ article.user.username }}</p>
-                            <p>le {{ article.date|date ('d,m,Y') }}</p>
+
                         </header>
                     </article>
                 </li>
