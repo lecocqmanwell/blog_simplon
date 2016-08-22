@@ -45,6 +45,11 @@
                 <ul class="actions vertical">
                     <li><a href="{{ path('logout') }}" class="button big fit">Log Out</a></li>
                 </ul>
+                <ul class="actions vertical">
+                    <li><a href="{{ path('sr_user_edit', {'id': app.user.id})  }}" class="button big fit">Modifier mon Profil</a></li>
+                </ul>
+
+
                     {% endif %}
                     {% if is_granted('ROLE_ADMIN') %}
                 <ul class="actions vertical">

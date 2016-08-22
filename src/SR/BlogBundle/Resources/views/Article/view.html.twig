@@ -6,7 +6,7 @@
 
 {% block srarticle_body %}
 
-    <article class="post" xmlns="http://www.w3.org/1999/html">
+<article class="post" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
         <header>
             <div class="title">
                 <h3>{{ article.title }}</h3>
@@ -16,63 +16,67 @@
                     <time class="published"> le {{ article.date|date('d/m/Y') }}</time>
             </div>
         </header>
-        <p>
-            {{ article.content }}
-        </p>
+            <p>
+                {{ article.content }}
+            </p>
 
 
 
-    {% if is_granted('ROLE_ADMIN') or (app.user is not null and app.user.id == article.user.id) %}
-
-
-    <ul class="actions fit">
-        <li>
+        {% if is_granted('ROLE_ADMIN') or (app.user is not null and app.user.id == article.user.id) %}
+            <ul class="actions fit">
+                <li>
                     <a href="{{ path('sr_article_edit', {'id': article.id}) }}" class="button fit">
                         <i class="glyphicon glyphicon-edit"></i>
                         Modifier votre article
                     </a>
-        </li>
-        <li>
+                </li>
+                <li>
                     <a href="{{ path('sr_article_delete', {'id': article.id}) }}" class="button fit delete">
                         <i class="glyphicon glyphicon-trash"></i>
                         Supprimer votre article
                     </a>
-        </li>
-    </ul>
-
-    {% endif %}
-
-
+                </li>
+            </ul>
+        {% endif %}
 
     <h3>Commentaires</h3>
 
+    <div class="table-wrapper">
+         <table>
+            <thead>
+            <tr>
+                <th>Auteur</th>
+                <th>Commentaire</th>
+            </tr>
 
-            {% for comment in article.comments %}
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <strong>{{ comment.user.username }}</strong>:
-                    </div>
-                     <div class="panel-body">
+    </thead>
+    <tbody></tbody>
+        {% for comment in article.comments %}
+            <tr>
+                <td>
+                    <strong>{{ comment.user.username }}</strong>:
+                </td>
+                <td>
                      {{ comment.content }}
-                    </div>
-                </div>
-             {% else %}
-
-             <div class="panel panel-default">
-                 <div class="panel-heading">
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+             <td>
                     Aucun commentaires pour le moment! Soyez le premier à en écrire un!
-                </div>
-             </div>
-
+             </td>
+            </tr>
     {% endfor %}
+        </tbody>
+    </table>
+    </div>
 
     {% if article.published != 1 %}
-article encore au brouillon
+        article encore au brouillon
     {% else %}
 
     {% if is_granted('ROLE_ADMIN') or (app.user is not null )%}
 
-        <div class="well">
             {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
 
             {# Les erreurs générales du formulaire. #}
@@ -82,10 +86,10 @@ article encore au brouillon
 
             {{ form_errors(form.content) }}
 
-            <div class="col-sm-10">
+           <div>
                 {# Génération de l'input. #}
                 {{ form_widget(form.content, {'attr': {'class': 'form-control'}}) }}
-            </div>
+           </div>
 
                 {# Pour le bouton, pas de label ni d'erreur, on affiche juste le widget #}
                 {{ form_widget(form.save, {'attr': {'class': 'btn btn-primary'}}) }}
@@ -98,9 +102,10 @@ article encore au brouillon
 
                 {# Fermeture de la balise <form> du formulaire HTML #}
                 {{ form_end(form) }}
-        </div>
+
 
     {% endif %}
+
 
 
 

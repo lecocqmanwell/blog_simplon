@@ -18,9 +18,9 @@
         <li>
             <p>le mail du User est :  {{ user.mail }}</p>
         </li>
-        <li>
-            <p>l'avatar du User est :  {{ user.avatar }}</p>
-        </li>
+        {#<li>#}
+            {#<p>l'avatar du User est :  {{ user.avatar }}</p>#}
+        {#</li>#}
 
         </ul>
         {% if is_granted('ROLE_ADMIN') or app.user.id == user.id %}

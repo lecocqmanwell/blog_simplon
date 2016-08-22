@@ -9,26 +9,24 @@
 {% block srarticle_body %}
 
     <div class="row">
+        <div class="6u 12u$(medium)">
+            <h3>Liste des articles publiés</h3>
+                {% for article in listArticles %}
+                    {% if article.published == 1 %}
+                        <ul  class="alt">
+                            <li>
+                                <a href="{{ path('sr_article_view', {'id': article.id}) }}">
+                                    {{ article.title }}
+                                </a>
+                                par {{ article.user.username }},
+                                le {{ article.date|date('d/m/Y') }}
+                            </li>
 
-    <div class="6u 12u$(medium)">
-        <h2>Liste des articles publiés</h2>
-            {% for article in listArticles %}
-                {% if article.published == 1 %}
-                    <ul>
-                        <li>
-                            <a href="{{ path('sr_article_view', {'id': article.id}) }}">
-                                {{ article.title }}
-                            </a>
-                            par {{ article.user.username }},
-                            le {{ article.date|date('d/m/Y') }}
-                        </li>
-
-                    </ul>
-                {% endif %}
+                        </ul>
+                    {% endif %}
                 {% endfor %}
         </div>
-                </div>
-
+    </div>
 
 
     {% if is_granted('ROLE_USER')  %}
@@ -38,7 +36,7 @@
                         {% for article in listArticles %}
                             {% if article.published != 1 %}
                                 {% if  is_granted('ROLE_ADMIN') or app.user.id == article.user.id %}
-                                <ul>
+                                <ul class="alt">
                                 <li>
                                     <a href="{{ path('sr_article_view', {'id': article.id}) }}">
                                         {{ article.title }}
@@ -60,10 +58,11 @@
 
 
 
-
-        {#{% if article == null %}#}
-            {#<li>Pas (encore !) d'articles</li>#}
-        {#{% endif %}#}
+        {% if listArticles == null %}
+            <ul class="alt">
+                <li>Pas (encore !) d'articles</li>
+            </ul>
+        {% endif %}
 
 
 

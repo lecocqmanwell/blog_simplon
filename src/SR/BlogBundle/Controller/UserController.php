@@ -126,7 +126,7 @@ class UserController extends Controller
             ->add('firstname', TextType::class)
             ->add('mail', TextType::class)
             ->add('password', PasswordType::class)
-            ->add('avatar', TextType::class)
+//            ->add('avatar', TextType::class)
             ->add('save', SubmitType::class);
 
         $form = $formBuilder->getForm();
