@@ -190,6 +190,7 @@ file that was distributed with this source code.
             {% block sonata_left_side %}
                 <aside class="main-sidebar">
                     <section class="sidebar">
+
                         {% block sonata_side_nav %}
                             {% block sonata_sidebar_search %}
                                 {% if app.user and is_granted('ROLE_SONATA_ADMIN') %}
@@ -220,6 +221,11 @@ file that was distributed with this source code.
                                 </p>
                             {% endblock %}
                         {% endblock sonata_side_nav %}
+                        <ul>
+                            <li>
+                                <a href="{{ path('sr_article_home') }}"><h3>retour au site</h3></a>
+                            </li>
+                        </ul>
                     </section>
                 </aside>
             {% endblock sonata_left_side %}

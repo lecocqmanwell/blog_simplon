@@ -64,6 +64,7 @@ file that was distributed with this source code.
         </div>
     {% endif %}
 
+
     <div class="row">
         {% set width_left = 4 %}
         {% set width_right = 4 %}
@@ -86,6 +87,8 @@ file that was distributed with this source code.
             {% for block in blocks.left %}
                 {% if block.roles|length == 0 or is_granted(block.roles) %}
                     {{ sonata_block_render({ 'type': block.type, 'settings': block.settings}) }}
+
+
                 {% endif %}
             {% endfor %}
         </div>

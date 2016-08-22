@@ -24,6 +24,28 @@ class User implements UserInterface, \Serializable
      */
     private $id;
 
+//    /**
+//     * @ORM\OneToMany(targetEntity="SR\BlogBundle\Entity\User", mappedBy="article")
+//     */
+//    private $likes; // Notez le « s », un article est lié à plusieurs likes
+//
+//    /**
+//     * @return mixed
+//     */
+//    public function getLikes()
+//    {
+//        return $this->likes;
+//    }
+//
+//    /**
+//     * @param mixed $likes
+//     */
+//    public function setLikes($likes)
+//    {
+//        $this->likes = $likes;
+//    }
+
+
     /**
      * @var string
      *
