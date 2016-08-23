@@ -22,10 +22,21 @@
             <h1><a href="{{ path('sr_article_home') }}">Manwell</a></h1>
             <nav class="links">
                 <ul>
-                    <li><a href="{{ path('sr_article_add') }}">Ajouter un article</a></li>
-                    <li><a href="{{ path('sr_article_homepage') }}">Voir tous les articles</a></li>
+                    <li class="desk">
+                        <a href="{{ path('sr_article_add') }} ">Ajouter un article</a>
+                    </li>
+                    <li class="add">
+                        <a href="{{ path('sr_article_add') }}" class="mobil"></a>
+                    </li>
+                    <li class="desk">
+                        <a href="{{ path('sr_article_homepage') }}" >Voir tous les articles</a>
+                    </li>
+                    <li class="list">
+                        <a href="{{ path('sr_article_homepage') }}" class="mobil"></a>
+                    </li>
                 </ul>
             </nav>
+
             <nav class="main">
                 <ul>
                     <li class="menu">
