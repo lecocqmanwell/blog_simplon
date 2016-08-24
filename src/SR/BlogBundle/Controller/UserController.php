@@ -47,7 +47,6 @@ class UserController extends Controller
 
         $user = $repository->findBy(array('id'=>$id));
 
-
         if ([] === $user) {
             throw new NotFoundHttpException("Vous n'étes pas connecté");
         }
@@ -100,7 +99,7 @@ class UserController extends Controller
 
                 $request->getSession()->getFlashBag()->add('notice', 'User bien enregistré.');
                 // On redirige vers la page de visualisation du user nouvellement crée
-                return $this->redirectToRoute('sr_user_view', array('id' => $user->getId()));
+                return $this->redirectToRoute('login', array('id' => $user->getId()));
             }
         }
 
@@ -116,7 +115,7 @@ class UserController extends Controller
      */
     public function editAction(User $user, Request $request)
     {
-        if ($this->get('security.authorization_checker')->isGranted('ROLE_ADMIN'))
+        if ($this->get('security.authorization_checker')->isGranted('ROLE_USER'))
         {
 
         $formBuilder = $this->get('form.factory')->createBuilder(FormType::class, $user);
@@ -144,7 +143,7 @@ class UserController extends Controller
                         // On enregistre notre objet $advert dans la base de données, par exemple
                         $em = $this->getDoctrine()->getManager();
                         $em->flush();
-                        $request->getSession()->getFlashBag()->add('notice', 'Annonce bien modifiée.');
+                        $request->getSession()->getFlashBag()->add('notice', 'Utilisateur modifié.');
 
 
                  }

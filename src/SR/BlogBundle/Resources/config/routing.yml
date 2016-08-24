@@ -61,3 +61,5 @@ sr_user_homepage:
 sr_user_edit:
     path:     /user/edit/{id}
     defaults: { _controller: SRBlogBundle:User:edit }
+    requirements:
+            id: \d+
