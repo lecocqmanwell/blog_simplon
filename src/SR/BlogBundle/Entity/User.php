@@ -35,7 +35,7 @@ class User implements UserInterface, \Serializable
 //    public function getLikes()
 //    {
 //        return $this->likes;
-//    }
+//    }sr
 //
 //    /**
 //     * @param mixed $likes
