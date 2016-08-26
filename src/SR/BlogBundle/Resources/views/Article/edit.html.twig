@@ -10,8 +10,17 @@
 
     {{ include("SRBlogBundle:Article:form.html.twig") }}
 
-    <p>   Attention : cette annonce sera modifié directement
+    <p>   Attention : cette article sera modifié directement
         sur la page d'accueil après validation du formulaire.
     </p>
+
+    <ul class="actions fit">
+    <li>
+        <a href="{{ path('sr_article_delete', {'id': article.id}) }}" class="button fit">
+            <i class="glyphicon glyphicon-edit"></i>
+            Supprimer cet article
+        </a>
+    </li>
+    </ul>
 
 {% endblock %}

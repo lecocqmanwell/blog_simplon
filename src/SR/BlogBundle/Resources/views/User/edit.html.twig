@@ -10,6 +10,14 @@
 
     {{ include("SRBlogBundle:User:form.html.twig") }}
 
+    <ul class="actions fit">
+        <li>
+            <a href="{{ path('sr_user_delete', {'id': app.user.id}) }}" class="button fit">
+                <i class="glyphicon glyphicon-edit"></i>
+                Supprimer ce profil
+            </a>
+        </li>
+    </ul>
 
 
 {% endblock %}
