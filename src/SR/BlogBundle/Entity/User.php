@@ -3,6 +3,7 @@
 namespace SR\BlogBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\AdvancedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\VarDumper\VarDumper;
 
@@ -13,7 +14,7 @@ use Symfony\Component\VarDumper\VarDumper;
  * @ORM\Table(name="user")
  * @ORM\Entity(repositoryClass="SR\BlogBundle\Repository\UserRepository")
  */
-class User implements UserInterface, \Serializable
+class User implements AdvancedUserInterface, \Serializable
 {
     /**
      * @var int
@@ -23,6 +24,22 @@ class User implements UserInterface, \Serializable
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+
+    /**
+     * @return mixed
+     */
+    public function getIsActive()
+    {
+        return $this->isActive;
+    }
+
+    /**
+     * @param mixed $isActive
+     */
+    public function setIsActive($isActive)
+    {
+        $this->isActive = $isActive;
+    }
 
 //    /**
 //     * @ORM\OneToMany(targetEntity="SR\BlogBundle\Entity\User", mappedBy="article")
@@ -93,6 +110,27 @@ class User implements UserInterface, \Serializable
      * @ORM\Column(name="roles", type="array", nullable=true)
      */
     private $roles = array();
+
+
+    public function isAccountNonExpired()
+    {
+        return true;
+    }
+
+    public function isAccountNonLocked()
+    {
+        return true;
+    }
+
+    public function isCredentialsNonExpired()
+    {
+        return true;
+    }
+
+    public function isEnabled()
+    {
+        return $this->isActive;
+    }
 
 
 
