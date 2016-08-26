@@ -172,10 +172,15 @@ class UserController extends Controller
         // Cela permet de protéger la suppression d'annonce contre cette faille
         $form = $this->get('form.factory')->create();
         if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
-            $em->remove($user);
+
+            $this->get('security.token_storage')->setToken(Null);
+            $user->setIsActive(false);
+
+            $em->persist($user);
+
             $em->flush();
             $request->getSession()->getFlashBag()->add('info', "L'utilisateur a bien été supprimée.");
-            return $this->redirectToRoute('sr_article_homepage');
+            return $this->redirectToRoute('sr_article_home');
         }
 
         return $this->render('SRBlogBundle:User:delete.html.twig', array(
