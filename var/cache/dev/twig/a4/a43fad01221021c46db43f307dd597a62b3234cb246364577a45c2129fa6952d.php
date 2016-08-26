@@ -22,157 +22,170 @@ class __TwigTemplate_01222921ef64f504c3343109e0f07f819d116fa27eaca9fa92075a5144a
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_dd8de48b77fbaab653fa0de25a938ae785760609ae20c48200075fa353549278 = $this->env->getExtension("native_profiler");
-        $__internal_dd8de48b77fbaab653fa0de25a938ae785760609ae20c48200075fa353549278->enter($__internal_dd8de48b77fbaab653fa0de25a938ae785760609ae20c48200075fa353549278_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SRBlogBundle:Article:homepage.html.twig"));
+        $__internal_6424fe294d9cec8d97f54a0a9ca46df6d2c1826fac4a5f82ee398270c524b089 = $this->env->getExtension("native_profiler");
+        $__internal_6424fe294d9cec8d97f54a0a9ca46df6d2c1826fac4a5f82ee398270c524b089->enter($__internal_6424fe294d9cec8d97f54a0a9ca46df6d2c1826fac4a5f82ee398270c524b089_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SRBlogBundle:Article:homepage.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_dd8de48b77fbaab653fa0de25a938ae785760609ae20c48200075fa353549278->leave($__internal_dd8de48b77fbaab653fa0de25a938ae785760609ae20c48200075fa353549278_prof);
+        $__internal_6424fe294d9cec8d97f54a0a9ca46df6d2c1826fac4a5f82ee398270c524b089->leave($__internal_6424fe294d9cec8d97f54a0a9ca46df6d2c1826fac4a5f82ee398270c524b089_prof);
 
     }
 
-    // line 3
+    // line 5
     public function block_title($context, array $blocks = array())
     {
-        $__internal_41f368de17a4a033250948308a5a9c4137cf57b4fd0581b446379da9e0d020ff = $this->env->getExtension("native_profiler");
-        $__internal_41f368de17a4a033250948308a5a9c4137cf57b4fd0581b446379da9e0d020ff->enter($__internal_41f368de17a4a033250948308a5a9c4137cf57b4fd0581b446379da9e0d020ff_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_f8d7a88ce7b946d728108e2ba92669f44f0ca8ff0728f4c9b5708e26fbd339fa = $this->env->getExtension("native_profiler");
+        $__internal_f8d7a88ce7b946d728108e2ba92669f44f0ca8ff0728f4c9b5708e26fbd339fa->enter($__internal_f8d7a88ce7b946d728108e2ba92669f44f0ca8ff0728f4c9b5708e26fbd339fa_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
-        // line 4
+        // line 6
         echo "    Accueil - ";
         $this->displayParentBlock("title", $context, $blocks);
         echo "
 ";
         
-        $__internal_41f368de17a4a033250948308a5a9c4137cf57b4fd0581b446379da9e0d020ff->leave($__internal_41f368de17a4a033250948308a5a9c4137cf57b4fd0581b446379da9e0d020ff_prof);
+        $__internal_f8d7a88ce7b946d728108e2ba92669f44f0ca8ff0728f4c9b5708e26fbd339fa->leave($__internal_f8d7a88ce7b946d728108e2ba92669f44f0ca8ff0728f4c9b5708e26fbd339fa_prof);
 
     }
 
-    // line 7
+    // line 9
     public function block_srarticle_body($context, array $blocks = array())
     {
-        $__internal_c8b77e0446e8caa2e663d24231afe967b7efdc722215f07160378ba34559c49c = $this->env->getExtension("native_profiler");
-        $__internal_c8b77e0446e8caa2e663d24231afe967b7efdc722215f07160378ba34559c49c->enter($__internal_c8b77e0446e8caa2e663d24231afe967b7efdc722215f07160378ba34559c49c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "srarticle_body"));
+        $__internal_9efb54cd4f63429613d871a43495f8aa3e0c381f8d9e723b54f17a00f057ee53 = $this->env->getExtension("native_profiler");
+        $__internal_9efb54cd4f63429613d871a43495f8aa3e0c381f8d9e723b54f17a00f057ee53->enter($__internal_9efb54cd4f63429613d871a43495f8aa3e0c381f8d9e723b54f17a00f057ee53_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "srarticle_body"));
 
-        // line 8
+        // line 10
         echo "
-    <h2>Liste des articles publiés</h2>
-
-    ";
-        // line 11
+    <div class=\"row\">
+        <div class=\"6u 12u\$(medium)\">
+            <h3>Liste des articles publiés</h3>
+                ";
+        // line 14
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["listArticles"]) ? $context["listArticles"] : $this->getContext($context, "listArticles")));
         foreach ($context['_seq'] as $context["_key"] => $context["article"]) {
-            // line 12
-            echo "        <ul>
-            ";
-            // line 13
+            // line 15
+            echo "                    ";
             if (($this->getAttribute($context["article"], "published", array()) == 1)) {
-                // line 14
-                echo "                <li>
-                    <a href=\"";
-                // line 15
+                // line 16
+                echo "                        <ul  class=\"alt\">
+                            <li>
+                                <a href=\"";
+                // line 18
                 echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("sr_article_view", array("id" => $this->getAttribute($context["article"], "id", array()))), "html", null, true);
                 echo "\">
-                           ";
-                // line 16
+                                    ";
+                // line 19
                 echo twig_escape_filter($this->env, $this->getAttribute($context["article"], "title", array()), "html", null, true);
                 echo "
-                    </a>
-                    par ";
-                // line 18
+                                </a>
+                                par ";
+                // line 21
                 echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["article"], "user", array()), "username", array()), "html", null, true);
                 echo ",
-                    le ";
-                // line 19
+                                le ";
+                // line 22
                 echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["article"], "date", array()), "d/m/Y"), "html", null, true);
                 echo "
-                </li>
+                                ";
+                // line 23
+                if (($this->getAttribute($this->getAttribute($context["article"], "user", array()), "isActive", array()) == 0)) {
+                    // line 24
+                    echo "                                    </br>Profil supprimé
+                                ";
+                }
+                // line 26
+                echo "                            </li>
 
-            ";
+                        </ul>
+                    ";
             }
-            // line 23
-            echo "        </ul>
-    ";
+            // line 30
+            echo "                ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['article'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 25
-        echo "
+        // line 31
+        echo "        </div>
+    </div>
+
 
     ";
-        // line 27
+        // line 35
         if ($this->env->getExtension('security')->isGranted("ROLE_USER")) {
-            // line 28
-            echo "            <h2>Article non publiés</h2>
-                ";
-            // line 29
+            // line 36
+            echo "            <h3>Mes articles non publiés</h3>
+                <div class=\"row\">
+                    <div class=\"6u 12u\$(medium)\">
+                        ";
+            // line 39
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable((isset($context["listArticles"]) ? $context["listArticles"] : $this->getContext($context, "listArticles")));
             foreach ($context['_seq'] as $context["_key"] => $context["article"]) {
-                // line 30
-                echo "                    ";
-                if (($this->getAttribute($context["article"], "published", array()) == 0)) {
-                    // line 31
-                    echo "                        ";
+                // line 40
+                echo "                            ";
+                if (($this->getAttribute($context["article"], "published", array()) != 1)) {
+                    // line 41
+                    echo "                                ";
                     if (($this->env->getExtension('security')->isGranted("ROLE_ADMIN") || ($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()), "id", array()) == $this->getAttribute($this->getAttribute($context["article"], "user", array()), "id", array())))) {
-                        // line 32
-                        echo "                        <ul>
-                        <li>
-                            <a href=\"";
-                        // line 34
+                        // line 42
+                        echo "                                <ul class=\"alt\">
+                                <li>
+                                    <a href=\"";
+                        // line 44
                         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("sr_article_view", array("id" => $this->getAttribute($context["article"], "id", array()))), "html", null, true);
                         echo "\">
-                                ";
-                        // line 35
+                                        ";
+                        // line 45
                         echo twig_escape_filter($this->env, $this->getAttribute($context["article"], "title", array()), "html", null, true);
                         echo "
-                            </a>
-                            par ";
-                        // line 37
+                                    </a>
+                                    par ";
+                        // line 47
                         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["article"], "user", array()), "username", array()), "html", null, true);
                         echo ",
-                            le ";
-                        // line 38
+                                    le ";
+                        // line 48
                         echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["article"], "date", array()), "d/m/Y"), "html", null, true);
                         echo "
-                        </li>
-                        </ul>
-                        ";
+                                </li>
+                                </ul>
+                                ";
                     }
-                    // line 42
-                    echo "                    ";
+                    // line 52
+                    echo "                            ";
                 }
-                // line 43
-                echo "                ";
+                // line 53
+                echo "                        ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['article'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 44
-            echo "        ";
-        }
-        // line 45
-        echo "
-
-
-
-
-
-
+            // line 54
+            echo "                    </div>
+                </div>
 
         ";
-        // line 54
-        echo "            ";
-        // line 55
-        echo "        ";
-        // line 56
+        }
+        // line 58
+        echo "
+
+        ";
+        // line 60
+        if (((isset($context["listArticles"]) ? $context["listArticles"] : $this->getContext($context, "listArticles")) == null)) {
+            // line 61
+            echo "            <ul class=\"alt\">
+                <li>Pas (encore !) d'articles</li>
+            </ul>
+        ";
+        }
+        // line 65
         echo "
 
 
 ";
         
-        $__internal_c8b77e0446e8caa2e663d24231afe967b7efdc722215f07160378ba34559c49c->leave($__internal_c8b77e0446e8caa2e663d24231afe967b7efdc722215f07160378ba34559c49c_prof);
+        $__internal_9efb54cd4f63429613d871a43495f8aa3e0c381f8d9e723b54f17a00f057ee53->leave($__internal_9efb54cd4f63429613d871a43495f8aa3e0c381f8d9e723b54f17a00f057ee53_prof);
 
     }
 
@@ -188,10 +201,12 @@ class __TwigTemplate_01222921ef64f504c3343109e0f07f819d116fa27eaca9fa92075a5144a
 
     public function getDebugInfo()
     {
-        return array (  170 => 56,  168 => 55,  166 => 54,  156 => 45,  153 => 44,  147 => 43,  144 => 42,  137 => 38,  133 => 37,  128 => 35,  124 => 34,  120 => 32,  117 => 31,  114 => 30,  110 => 29,  107 => 28,  105 => 27,  101 => 25,  94 => 23,  87 => 19,  83 => 18,  78 => 16,  74 => 15,  71 => 14,  69 => 13,  66 => 12,  62 => 11,  57 => 8,  51 => 7,  41 => 4,  35 => 3,  11 => 1,);
+        return array (  183 => 65,  177 => 61,  175 => 60,  171 => 58,  165 => 54,  159 => 53,  156 => 52,  149 => 48,  145 => 47,  140 => 45,  136 => 44,  132 => 42,  129 => 41,  126 => 40,  122 => 39,  117 => 36,  115 => 35,  109 => 31,  103 => 30,  97 => 26,  93 => 24,  91 => 23,  87 => 22,  83 => 21,  78 => 19,  74 => 18,  70 => 16,  67 => 15,  63 => 14,  57 => 10,  51 => 9,  41 => 6,  35 => 5,  11 => 1,);
     }
 }
 /* {% extends "SRBlogBundle::layout.html.twig" %}*/
+/* */
+/* */
 /* */
 /* {% block title %}*/
 /*     Accueil - {{ parent() }}*/
@@ -199,53 +214,60 @@ class __TwigTemplate_01222921ef64f504c3343109e0f07f819d116fa27eaca9fa92075a5144a
 /* */
 /* {% block srarticle_body %}*/
 /* */
-/*     <h2>Liste des articles publiés</h2>*/
+/*     <div class="row">*/
+/*         <div class="6u 12u$(medium)">*/
+/*             <h3>Liste des articles publiés</h3>*/
+/*                 {% for article in listArticles %}*/
+/*                     {% if article.published == 1 %}*/
+/*                         <ul  class="alt">*/
+/*                             <li>*/
+/*                                 <a href="{{ path('sr_article_view', {'id': article.id}) }}">*/
+/*                                     {{ article.title }}*/
+/*                                 </a>*/
+/*                                 par {{ article.user.username }},*/
+/*                                 le {{ article.date|date('d/m/Y') }}*/
+/*                                 {% if article.user.isActive == 0 %}*/
+/*                                     </br>Profil supprimé*/
+/*                                 {% endif %}*/
+/*                             </li>*/
 /* */
-/*     {% for article in listArticles %}*/
-/*         <ul>*/
-/*             {% if article.published == 1 %}*/
-/*                 <li>*/
-/*                     <a href="{{ path('sr_article_view', {'id': article.id}) }}">*/
-/*                            {{ article.title }}*/
-/*                     </a>*/
-/*                     par {{ article.user.username }},*/
-/*                     le {{ article.date|date('d/m/Y') }}*/
-/*                 </li>*/
-/* */
-/*             {% endif %}*/
-/*         </ul>*/
-/*     {% endfor %}*/
+/*                         </ul>*/
+/*                     {% endif %}*/
+/*                 {% endfor %}*/
+/*         </div>*/
+/*     </div>*/
 /* */
 /* */
 /*     {% if is_granted('ROLE_USER')  %}*/
-/*             <h2>Article non publiés</h2>*/
-/*                 {% for article in listArticles %}*/
-/*                     {% if article.published == 0 %}*/
-/*                         {% if  is_granted('ROLE_ADMIN') or app.user.id == article.user.id %}*/
-/*                         <ul>*/
-/*                         <li>*/
-/*                             <a href="{{ path('sr_article_view', {'id': article.id}) }}">*/
-/*                                 {{ article.title }}*/
-/*                             </a>*/
-/*                             par {{ article.user.username }},*/
-/*                             le {{ article.date|date('d/m/Y') }}*/
-/*                         </li>*/
-/*                         </ul>*/
-/*                         {% endif %}*/
-/*                     {% endif %}*/
-/*                 {% endfor %}*/
+/*             <h3>Mes articles non publiés</h3>*/
+/*                 <div class="row">*/
+/*                     <div class="6u 12u$(medium)">*/
+/*                         {% for article in listArticles %}*/
+/*                             {% if article.published != 1 %}*/
+/*                                 {% if  is_granted('ROLE_ADMIN') or app.user.id == article.user.id %}*/
+/*                                 <ul class="alt">*/
+/*                                 <li>*/
+/*                                     <a href="{{ path('sr_article_view', {'id': article.id}) }}">*/
+/*                                         {{ article.title }}*/
+/*                                     </a>*/
+/*                                     par {{ article.user.username }},*/
+/*                                     le {{ article.date|date('d/m/Y') }}*/
+/*                                 </li>*/
+/*                                 </ul>*/
+/*                                 {% endif %}*/
+/*                             {% endif %}*/
+/*                         {% endfor %}*/
+/*                     </div>*/
+/*                 </div>*/
+/* */
 /*         {% endif %}*/
 /* */
 /* */
-/* */
-/* */
-/* */
-/* */
-/* */
-/* */
-/*         {#{% if article == null %}#}*/
-/*             {#<li>Pas (encore !) d'articles</li>#}*/
-/*         {#{% endif %}#}*/
+/*         {% if listArticles == null %}*/
+/*             <ul class="alt">*/
+/*                 <li>Pas (encore !) d'articles</li>*/
+/*             </ul>*/
+/*         {% endif %}*/
 /* */
 /* */
 /* */

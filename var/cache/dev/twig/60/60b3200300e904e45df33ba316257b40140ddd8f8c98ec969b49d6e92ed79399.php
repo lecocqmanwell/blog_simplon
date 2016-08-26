@@ -22,20 +22,20 @@ class __TwigTemplate_93102acf4d1c3e4d0397f5203133a74e505de3732ad0de30e58be34545b
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_70cb8862ae256aa290fb33311d665aec63b1dc59114a9e54ced1db8dd9360728 = $this->env->getExtension("native_profiler");
-        $__internal_70cb8862ae256aa290fb33311d665aec63b1dc59114a9e54ced1db8dd9360728->enter($__internal_70cb8862ae256aa290fb33311d665aec63b1dc59114a9e54ced1db8dd9360728_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SRBlogBundle:User:add.html.twig"));
+        $__internal_9ac11922a27508fb17791a88d32dd48b5d4bb8f5e48364851e168d0e32fb23a6 = $this->env->getExtension("native_profiler");
+        $__internal_9ac11922a27508fb17791a88d32dd48b5d4bb8f5e48364851e168d0e32fb23a6->enter($__internal_9ac11922a27508fb17791a88d32dd48b5d4bb8f5e48364851e168d0e32fb23a6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SRBlogBundle:User:add.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_70cb8862ae256aa290fb33311d665aec63b1dc59114a9e54ced1db8dd9360728->leave($__internal_70cb8862ae256aa290fb33311d665aec63b1dc59114a9e54ced1db8dd9360728_prof);
+        $__internal_9ac11922a27508fb17791a88d32dd48b5d4bb8f5e48364851e168d0e32fb23a6->leave($__internal_9ac11922a27508fb17791a88d32dd48b5d4bb8f5e48364851e168d0e32fb23a6_prof);
 
     }
 
     // line 3
     public function block_title($context, array $blocks = array())
     {
-        $__internal_c317ec5936b02748e8ea817681e544119036abbadc3cb9b0a52ea7dd365d17d6 = $this->env->getExtension("native_profiler");
-        $__internal_c317ec5936b02748e8ea817681e544119036abbadc3cb9b0a52ea7dd365d17d6->enter($__internal_c317ec5936b02748e8ea817681e544119036abbadc3cb9b0a52ea7dd365d17d6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_8c52718382a6e887c2a13c2a191788d0dfee358e86cfe45b1c9912595778c4d6 = $this->env->getExtension("native_profiler");
+        $__internal_8c52718382a6e887c2a13c2a191788d0dfee358e86cfe45b1c9912595778c4d6->enter($__internal_8c52718382a6e887c2a13c2a191788d0dfee358e86cfe45b1c9912595778c4d6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         // line 4
         echo "    Ajouter un article - ";
@@ -43,32 +43,30 @@ class __TwigTemplate_93102acf4d1c3e4d0397f5203133a74e505de3732ad0de30e58be34545b
         echo "
 ";
         
-        $__internal_c317ec5936b02748e8ea817681e544119036abbadc3cb9b0a52ea7dd365d17d6->leave($__internal_c317ec5936b02748e8ea817681e544119036abbadc3cb9b0a52ea7dd365d17d6_prof);
+        $__internal_8c52718382a6e887c2a13c2a191788d0dfee358e86cfe45b1c9912595778c4d6->leave($__internal_8c52718382a6e887c2a13c2a191788d0dfee358e86cfe45b1c9912595778c4d6_prof);
 
     }
 
     // line 7
     public function block_sruser_body($context, array $blocks = array())
     {
-        $__internal_d728c61ee73883e37fd4382614a6c7fbc3e291eeb5b847fc3e69d937f0e4baae = $this->env->getExtension("native_profiler");
-        $__internal_d728c61ee73883e37fd4382614a6c7fbc3e291eeb5b847fc3e69d937f0e4baae->enter($__internal_d728c61ee73883e37fd4382614a6c7fbc3e291eeb5b847fc3e69d937f0e4baae_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "sruser_body"));
+        $__internal_c898dfc8000b4d0ff3b08f1b36b8782591d357246ce0b4da81f21c9647d0576c = $this->env->getExtension("native_profiler");
+        $__internal_c898dfc8000b4d0ff3b08f1b36b8782591d357246ce0b4da81f21c9647d0576c->enter($__internal_c898dfc8000b4d0ff3b08f1b36b8782591d357246ce0b4da81f21c9647d0576c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "sruser_body"));
 
         // line 8
         echo "
-    <h2>Ajouter un user</h2>
+    <h2>Créer votre compte</h2>
 
     ";
         // line 11
         echo twig_include($this->env, $context, "SRBlogBundle:User:form.html.twig");
         echo "
 
-    <p>   Attention : cette annonce sera ajoutée directement
-        sur la page d'accueil après validation du formulaire.
-    </p>
+
 
 ";
         
-        $__internal_d728c61ee73883e37fd4382614a6c7fbc3e291eeb5b847fc3e69d937f0e4baae->leave($__internal_d728c61ee73883e37fd4382614a6c7fbc3e291eeb5b847fc3e69d937f0e4baae_prof);
+        $__internal_c898dfc8000b4d0ff3b08f1b36b8782591d357246ce0b4da81f21c9647d0576c->leave($__internal_c898dfc8000b4d0ff3b08f1b36b8782591d357246ce0b4da81f21c9647d0576c_prof);
 
     }
 
@@ -95,12 +93,10 @@ class __TwigTemplate_93102acf4d1c3e4d0397f5203133a74e505de3732ad0de30e58be34545b
 /* */
 /* {% block sruser_body %}*/
 /* */
-/*     <h2>Ajouter un user</h2>*/
+/*     <h2>Créer votre compte</h2>*/
 /* */
 /*     {{ include("SRBlogBundle:User:form.html.twig") }}*/
 /* */
-/*     <p>   Attention : cette annonce sera ajoutée directement*/
-/*         sur la page d'accueil après validation du formulaire.*/
-/*     </p>*/
+/* */
 /* */
 /* {% endblock %}*/

@@ -15,8 +15,8 @@ class __TwigTemplate_dd55286e9d28fec124003ac1d8ce4fb17756e6fb4455db65f32907089f6
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_53c8d6e2bc46c0f0ffca713d766a9e752318e8e5a11d247f174f5f95aa42da0d = $this->env->getExtension("native_profiler");
-        $__internal_53c8d6e2bc46c0f0ffca713d766a9e752318e8e5a11d247f174f5f95aa42da0d->enter($__internal_53c8d6e2bc46c0f0ffca713d766a9e752318e8e5a11d247f174f5f95aa42da0d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SRBlogBundle:User:form.html.twig"));
+        $__internal_2f7a576f1554e2d538de9965875f893344e9a9ece1eeed1b6a3b75997ae280e4 = $this->env->getExtension("native_profiler");
+        $__internal_2f7a576f1554e2d538de9965875f893344e9a9ece1eeed1b6a3b75997ae280e4->enter($__internal_2f7a576f1554e2d538de9965875f893344e9a9ece1eeed1b6a3b75997ae280e4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SRBlogBundle:User:form.html.twig"));
 
         // line 1
         echo "<h3>Formulaire d'enregistrement des utilisateurs</h3>
@@ -137,27 +137,28 @@ class __TwigTemplate_dd55286e9d28fec124003ac1d8ce4fb17756e6fb4455db65f32907089f6
         </div>
 </div>
 
-        <div class=\"form-group\">
-                ";
+        ";
+        // line 72
+        echo "                ";
         // line 73
         echo "                ";
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "avatar", array()), 'label', array("label_attr" => array("class" => "col-sm-2 control-label"), "label" => "Avatar"));
+        // line 74
         echo "
-
                 ";
         // line 76
         echo "                ";
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "avatar", array()), 'errors');
-        echo "
-                <div class=\"col-sm-10\">
-                        ";
+        // line 77
+        echo "                ";
+        // line 78
+        echo "                        ";
         // line 79
         echo "                        ";
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "avatar", array()), 'widget', array("attr" => array("class" => "form-control")));
+        // line 80
+        echo "                ";
+        // line 81
+        echo "        ";
+        // line 82
         echo "
-                </div>
-        </div>
-
 
 ";
         // line 85
@@ -179,7 +180,7 @@ class __TwigTemplate_dd55286e9d28fec124003ac1d8ce4fb17756e6fb4455db65f32907089f6
 </div>
 ";
         
-        $__internal_53c8d6e2bc46c0f0ffca713d766a9e752318e8e5a11d247f174f5f95aa42da0d->leave($__internal_53c8d6e2bc46c0f0ffca713d766a9e752318e8e5a11d247f174f5f95aa42da0d_prof);
+        $__internal_2f7a576f1554e2d538de9965875f893344e9a9ece1eeed1b6a3b75997ae280e4->leave($__internal_2f7a576f1554e2d538de9965875f893344e9a9ece1eeed1b6a3b75997ae280e4_prof);
 
     }
 
@@ -195,7 +196,7 @@ class __TwigTemplate_dd55286e9d28fec124003ac1d8ce4fb17756e6fb4455db65f32907089f6
 
     public function getDebugInfo()
     {
-        return array (  176 => 93,  170 => 90,  164 => 85,  155 => 79,  149 => 76,  143 => 73,  134 => 67,  127 => 63,  121 => 60,  112 => 54,  105 => 50,  99 => 47,  90 => 41,  83 => 37,  77 => 34,  68 => 28,  61 => 24,  55 => 21,  45 => 14,  38 => 10,  32 => 7,  26 => 3,  22 => 1,);
+        return array (  177 => 93,  171 => 90,  165 => 85,  161 => 82,  159 => 81,  157 => 80,  155 => 79,  153 => 78,  151 => 77,  149 => 76,  146 => 74,  144 => 73,  142 => 72,  134 => 67,  127 => 63,  121 => 60,  112 => 54,  105 => 50,  99 => 47,  90 => 41,  83 => 37,  77 => 34,  68 => 28,  61 => 24,  55 => 21,  45 => 14,  38 => 10,  32 => 7,  26 => 3,  22 => 1,);
     }
 }
 /* <h3>Formulaire d'enregistrement des utilisateurs</h3>*/
@@ -268,17 +269,17 @@ class __TwigTemplate_dd55286e9d28fec124003ac1d8ce4fb17756e6fb4455db65f32907089f6
 /*         </div>*/
 /* </div>*/
 /* */
-/*         <div class="form-group">*/
+/*         {#<div class="form-group">#}*/
 /*                 {# Génération du label. #}*/
-/*                 {{ form_label(form.avatar, "Avatar", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}*/
+/*                 {#{{ form_label(form.avatar, "Avatar", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}#}*/
 /* */
 /*                 {# Affichage des erreurs pour ce champ précis. #}*/
-/*                 {{ form_errors(form.avatar) }}*/
-/*                 <div class="col-sm-10">*/
+/*                 {#{{ form_errors(form.avatar) }}#}*/
+/*                 {#<div class="col-sm-10">#}*/
 /*                         {# Génération de l'input. #}*/
-/*                         {{ form_widget(form.avatar, {'attr': {'class': 'form-control'}}) }}*/
-/*                 </div>*/
-/*         </div>*/
+/*                         {#{{ form_widget(form.avatar, {'attr': {'class': 'form-control'}}) }}#}*/
+/*                 {#</div>#}*/
+/*         {#</div>#}*/
 /* */
 /* */
 /* {# Pour le bouton, pas de label ni d'erreur, on affiche juste le widget #}*/

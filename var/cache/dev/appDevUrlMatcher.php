@@ -121,11 +121,16 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'sr_article_view')), array (  '_controller' => 'SR\\BlogBundle\\Controller\\ArticleController::viewAction',));
             }
 
-            // sr_article_delete
-            if (0 === strpos($pathinfo, '/article/delete') && preg_match('#^/article/delete/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sr_article_delete')), array (  '_controller' => 'SR\\BlogBundle\\Controller\\ArticleController::deleteAction',));
-            }
+        }
 
+        // sr_article_home
+        if ($pathinfo === '/home') {
+            return array (  '_controller' => 'SR\\BlogBundle\\Controller\\ArticleController::homeAction',  '_route' => 'sr_article_home',);
+        }
+
+        // sr_article_delete
+        if (0 === strpos($pathinfo, '/article/delete') && preg_match('#^/article/delete/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'sr_article_delete')), array (  '_controller' => 'SR\\BlogBundle\\Controller\\ArticleController::deleteAction',));
         }
 
         if (0 === strpos($pathinfo, '/user')) {
@@ -150,7 +155,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             }
 
             // sr_user_edit
-            if (0 === strpos($pathinfo, '/user/edit') && preg_match('#^/user/edit/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            if (0 === strpos($pathinfo, '/user/edit') && preg_match('#^/user/edit/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'sr_user_edit')), array (  '_controller' => 'SR\\BlogBundle\\Controller\\UserController::editAction',));
             }
 

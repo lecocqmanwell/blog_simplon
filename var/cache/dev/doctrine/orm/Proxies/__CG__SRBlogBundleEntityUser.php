@@ -64,10 +64,10 @@ class User extends \SR\BlogBundle\Entity\User implements \Doctrine\ORM\Proxy\Pro
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'SR\\BlogBundle\\Entity\\User' . "\0" . 'id', '' . "\0" . 'SR\\BlogBundle\\Entity\\User' . "\0" . 'name', '' . "\0" . 'SR\\BlogBundle\\Entity\\User' . "\0" . 'firstname', '' . "\0" . 'SR\\BlogBundle\\Entity\\User' . "\0" . 'username', '' . "\0" . 'SR\\BlogBundle\\Entity\\User' . "\0" . 'mail', '' . "\0" . 'SR\\BlogBundle\\Entity\\User' . "\0" . 'password', '' . "\0" . 'SR\\BlogBundle\\Entity\\User' . "\0" . 'avatar', '' . "\0" . 'SR\\BlogBundle\\Entity\\User' . "\0" . 'roles', '' . "\0" . 'SR\\BlogBundle\\Entity\\User' . "\0" . 'isActive'];
+            return ['__isInitialized__', '' . "\0" . 'SR\\BlogBundle\\Entity\\User' . "\0" . 'id', '' . "\0" . 'SR\\BlogBundle\\Entity\\User' . "\0" . 'name', '' . "\0" . 'SR\\BlogBundle\\Entity\\User' . "\0" . 'firstname', '' . "\0" . 'SR\\BlogBundle\\Entity\\User' . "\0" . 'username', '' . "\0" . 'SR\\BlogBundle\\Entity\\User' . "\0" . 'mail', '' . "\0" . 'SR\\BlogBundle\\Entity\\User' . "\0" . 'password', '' . "\0" . 'SR\\BlogBundle\\Entity\\User' . "\0" . 'roles', '' . "\0" . 'SR\\BlogBundle\\Entity\\User' . "\0" . 'isActive'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'SR\\BlogBundle\\Entity\\User' . "\0" . 'id', '' . "\0" . 'SR\\BlogBundle\\Entity\\User' . "\0" . 'name', '' . "\0" . 'SR\\BlogBundle\\Entity\\User' . "\0" . 'firstname', '' . "\0" . 'SR\\BlogBundle\\Entity\\User' . "\0" . 'username', '' . "\0" . 'SR\\BlogBundle\\Entity\\User' . "\0" . 'mail', '' . "\0" . 'SR\\BlogBundle\\Entity\\User' . "\0" . 'password', '' . "\0" . 'SR\\BlogBundle\\Entity\\User' . "\0" . 'avatar', '' . "\0" . 'SR\\BlogBundle\\Entity\\User' . "\0" . 'roles', '' . "\0" . 'SR\\BlogBundle\\Entity\\User' . "\0" . 'isActive'];
+        return ['__isInitialized__', '' . "\0" . 'SR\\BlogBundle\\Entity\\User' . "\0" . 'id', '' . "\0" . 'SR\\BlogBundle\\Entity\\User' . "\0" . 'name', '' . "\0" . 'SR\\BlogBundle\\Entity\\User' . "\0" . 'firstname', '' . "\0" . 'SR\\BlogBundle\\Entity\\User' . "\0" . 'username', '' . "\0" . 'SR\\BlogBundle\\Entity\\User' . "\0" . 'mail', '' . "\0" . 'SR\\BlogBundle\\Entity\\User' . "\0" . 'password', '' . "\0" . 'SR\\BlogBundle\\Entity\\User' . "\0" . 'roles', '' . "\0" . 'SR\\BlogBundle\\Entity\\User' . "\0" . 'isActive'];
     }
 
     /**
@@ -173,6 +173,72 @@ class User extends \SR\BlogBundle\Entity\User implements \Doctrine\ORM\Proxy\Pro
     }
 
     
+    /**
+     * {@inheritDoc}
+     */
+    public function isAccountNonExpired()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'isAccountNonExpired', []);
+
+        return parent::isAccountNonExpired();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function isAccountNonLocked()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'isAccountNonLocked', []);
+
+        return parent::isAccountNonLocked();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function isCredentialsNonExpired()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'isCredentialsNonExpired', []);
+
+        return parent::isCredentialsNonExpired();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function isEnabled()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'isEnabled', []);
+
+        return parent::isEnabled();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getIsActive()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getIsActive', []);
+
+        return parent::getIsActive();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setIsActive($isActive)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setIsActive', [$isActive]);
+
+        return parent::setIsActive($isActive);
+    }
+
     /**
      * {@inheritDoc}
      */

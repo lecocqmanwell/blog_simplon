@@ -22,20 +22,20 @@ class __TwigTemplate_17dbcf94f6d66c1a0c90082bdf638042813e8f9279defbeabcf83d310e8
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_ca073596b066911ee2edefc7dd3c98c09bc35a72c7369a3824c0d6b34b504182 = $this->env->getExtension("native_profiler");
-        $__internal_ca073596b066911ee2edefc7dd3c98c09bc35a72c7369a3824c0d6b34b504182->enter($__internal_ca073596b066911ee2edefc7dd3c98c09bc35a72c7369a3824c0d6b34b504182_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SRBlogBundle:Article:add.html.twig"));
+        $__internal_bd9b6b88774976e9e6229b3847f30cdea7053172c1c51272b652c05abd0aa1ae = $this->env->getExtension("native_profiler");
+        $__internal_bd9b6b88774976e9e6229b3847f30cdea7053172c1c51272b652c05abd0aa1ae->enter($__internal_bd9b6b88774976e9e6229b3847f30cdea7053172c1c51272b652c05abd0aa1ae_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SRBlogBundle:Article:add.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_ca073596b066911ee2edefc7dd3c98c09bc35a72c7369a3824c0d6b34b504182->leave($__internal_ca073596b066911ee2edefc7dd3c98c09bc35a72c7369a3824c0d6b34b504182_prof);
+        $__internal_bd9b6b88774976e9e6229b3847f30cdea7053172c1c51272b652c05abd0aa1ae->leave($__internal_bd9b6b88774976e9e6229b3847f30cdea7053172c1c51272b652c05abd0aa1ae_prof);
 
     }
 
     // line 3
     public function block_title($context, array $blocks = array())
     {
-        $__internal_77cc2f62df561b994a7f5873e3c626de21addb7be1238ca81ea43a9237b98943 = $this->env->getExtension("native_profiler");
-        $__internal_77cc2f62df561b994a7f5873e3c626de21addb7be1238ca81ea43a9237b98943->enter($__internal_77cc2f62df561b994a7f5873e3c626de21addb7be1238ca81ea43a9237b98943_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_1cd121dd839829e95b38c6eed64000eb67647b19148591501e13279f3f441ca7 = $this->env->getExtension("native_profiler");
+        $__internal_1cd121dd839829e95b38c6eed64000eb67647b19148591501e13279f3f441ca7->enter($__internal_1cd121dd839829e95b38c6eed64000eb67647b19148591501e13279f3f441ca7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         // line 4
         echo "    Ajouter un article - ";
@@ -43,15 +43,15 @@ class __TwigTemplate_17dbcf94f6d66c1a0c90082bdf638042813e8f9279defbeabcf83d310e8
         echo "
 ";
         
-        $__internal_77cc2f62df561b994a7f5873e3c626de21addb7be1238ca81ea43a9237b98943->leave($__internal_77cc2f62df561b994a7f5873e3c626de21addb7be1238ca81ea43a9237b98943_prof);
+        $__internal_1cd121dd839829e95b38c6eed64000eb67647b19148591501e13279f3f441ca7->leave($__internal_1cd121dd839829e95b38c6eed64000eb67647b19148591501e13279f3f441ca7_prof);
 
     }
 
     // line 7
     public function block_srarticle_body($context, array $blocks = array())
     {
-        $__internal_3012e7508e0c4940da2621f377a8c970651b5f03b0c0ffd5fa2891aaca03758d = $this->env->getExtension("native_profiler");
-        $__internal_3012e7508e0c4940da2621f377a8c970651b5f03b0c0ffd5fa2891aaca03758d->enter($__internal_3012e7508e0c4940da2621f377a8c970651b5f03b0c0ffd5fa2891aaca03758d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "srarticle_body"));
+        $__internal_74cd2206c0c761dcac4a78b47fbbdf428ec562c9864a99c21198ecd61a6afc5c = $this->env->getExtension("native_profiler");
+        $__internal_74cd2206c0c761dcac4a78b47fbbdf428ec562c9864a99c21198ecd61a6afc5c->enter($__internal_74cd2206c0c761dcac4a78b47fbbdf428ec562c9864a99c21198ecd61a6afc5c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "srarticle_body"));
 
         // line 8
         echo "
@@ -62,13 +62,15 @@ class __TwigTemplate_17dbcf94f6d66c1a0c90082bdf638042813e8f9279defbeabcf83d310e8
         echo twig_include($this->env, $context, "SRBlogBundle:Article:form.html.twig");
         echo "
 
-    <p>   Attention : cette annonce sera ajoutée directement
-        sur la page d'accueil après validation du formulaire.
+    <p>   Attention : cette article sera ajoutée directement
+        sur la page d'accueil après validation du formulaire, sauf si bien-sur vous ne cochez pas la case published...
+
     </p>
+    <p> Si vous ne cochez pas la case Published, il sera enregistré en brouillon (et donc non -publié).</p>
 
 ";
         
-        $__internal_3012e7508e0c4940da2621f377a8c970651b5f03b0c0ffd5fa2891aaca03758d->leave($__internal_3012e7508e0c4940da2621f377a8c970651b5f03b0c0ffd5fa2891aaca03758d_prof);
+        $__internal_74cd2206c0c761dcac4a78b47fbbdf428ec562c9864a99c21198ecd61a6afc5c->leave($__internal_74cd2206c0c761dcac4a78b47fbbdf428ec562c9864a99c21198ecd61a6afc5c_prof);
 
     }
 
@@ -99,8 +101,10 @@ class __TwigTemplate_17dbcf94f6d66c1a0c90082bdf638042813e8f9279defbeabcf83d310e8
 /* */
 /*     {{ include("SRBlogBundle:Article:form.html.twig") }}*/
 /* */
-/*     <p>   Attention : cette annonce sera ajoutée directement*/
-/*         sur la page d'accueil après validation du formulaire.*/
+/*     <p>   Attention : cette article sera ajoutée directement*/
+/*         sur la page d'accueil après validation du formulaire, sauf si bien-sur vous ne cochez pas la case published...*/
+/* */
 /*     </p>*/
+/*     <p> Si vous ne cochez pas la case Published, il sera enregistré en brouillon (et donc non -publié).</p>*/
 /* */
 /* {% endblock %}*/

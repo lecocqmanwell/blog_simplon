@@ -20,20 +20,20 @@ class __TwigTemplate_79bfe67f2ecee4facd1fc6b5a3d5da768fd1d7c4bfc34be6a8f0043e03e
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_d5e304d14dd9ec89502a8174ba524883eefb737f4aad5c5e2a3dad51789b5370 = $this->env->getExtension("native_profiler");
-        $__internal_d5e304d14dd9ec89502a8174ba524883eefb737f4aad5c5e2a3dad51789b5370->enter($__internal_d5e304d14dd9ec89502a8174ba524883eefb737f4aad5c5e2a3dad51789b5370_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SonataAdminBundle:Block:block_admin_list.html.twig"));
+        $__internal_9408b82f783f3e49211f4cc4c05b7dd0ad3818123d19af42d5cca7e956a2048f = $this->env->getExtension("native_profiler");
+        $__internal_9408b82f783f3e49211f4cc4c05b7dd0ad3818123d19af42d5cca7e956a2048f->enter($__internal_9408b82f783f3e49211f4cc4c05b7dd0ad3818123d19af42d5cca7e956a2048f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SonataAdminBundle:Block:block_admin_list.html.twig"));
 
         $this->getParent($context)->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_d5e304d14dd9ec89502a8174ba524883eefb737f4aad5c5e2a3dad51789b5370->leave($__internal_d5e304d14dd9ec89502a8174ba524883eefb737f4aad5c5e2a3dad51789b5370_prof);
+        $__internal_9408b82f783f3e49211f4cc4c05b7dd0ad3818123d19af42d5cca7e956a2048f->leave($__internal_9408b82f783f3e49211f4cc4c05b7dd0ad3818123d19af42d5cca7e956a2048f_prof);
 
     }
 
     // line 14
     public function block_block($context, array $blocks = array())
     {
-        $__internal_5ef56b814c8cf4bf8a6ffb893a494ff3cabda389d87f011b552755323502a0ce = $this->env->getExtension("native_profiler");
-        $__internal_5ef56b814c8cf4bf8a6ffb893a494ff3cabda389d87f011b552755323502a0ce->enter($__internal_5ef56b814c8cf4bf8a6ffb893a494ff3cabda389d87f011b552755323502a0ce_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "block"));
+        $__internal_d068141e27c0ff3b54cc07e0fd02d86d57d75cbf4d09865f6c4f7312313ef924 = $this->env->getExtension("native_profiler");
+        $__internal_d068141e27c0ff3b54cc07e0fd02d86d57d75cbf4d09865f6c4f7312313ef924->enter($__internal_d068141e27c0ff3b54cc07e0fd02d86d57d75cbf4d09865f6c4f7312313ef924_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "block"));
 
         // line 15
         echo "    ";
@@ -179,9 +179,11 @@ class __TwigTemplate_79bfe67f2ecee4facd1fc6b5a3d5da768fd1d7c4bfc34be6a8f0043e03e
                     </table>
                 </div>
             </div>
+
+
         ";
             }
-            // line 50
+            // line 52
             echo "    ";
             ++$context['loop']['index0'];
             ++$context['loop']['index'];
@@ -196,7 +198,7 @@ class __TwigTemplate_79bfe67f2ecee4facd1fc6b5a3d5da768fd1d7c4bfc34be6a8f0043e03e
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['group'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         
-        $__internal_5ef56b814c8cf4bf8a6ffb893a494ff3cabda389d87f011b552755323502a0ce->leave($__internal_5ef56b814c8cf4bf8a6ffb893a494ff3cabda389d87f011b552755323502a0ce_prof);
+        $__internal_d068141e27c0ff3b54cc07e0fd02d86d57d75cbf4d09865f6c4f7312313ef924->leave($__internal_d068141e27c0ff3b54cc07e0fd02d86d57d75cbf4d09865f6c4f7312313ef924_prof);
 
     }
 
@@ -212,7 +214,7 @@ class __TwigTemplate_79bfe67f2ecee4facd1fc6b5a3d5da768fd1d7c4bfc34be6a8f0043e03e
 
     public function getDebugInfo()
     {
-        return array (  185 => 50,  178 => 45,  164 => 44,  158 => 40,  144 => 39,  141 => 38,  124 => 37,  117 => 33,  113 => 31,  110 => 30,  93 => 29,  85 => 24,  81 => 22,  79 => 21,  76 => 20,  69 => 19,  66 => 18,  60 => 17,  57 => 16,  39 => 15,  33 => 14,  18 => 12,);
+        return array (  187 => 52,  178 => 45,  164 => 44,  158 => 40,  144 => 39,  141 => 38,  124 => 37,  117 => 33,  113 => 31,  110 => 30,  93 => 29,  85 => 24,  81 => 22,  79 => 21,  76 => 20,  69 => 19,  66 => 18,  60 => 17,  57 => 16,  39 => 15,  33 => 14,  18 => 12,);
     }
 }
 /* {#*/
@@ -263,6 +265,8 @@ class __TwigTemplate_79bfe67f2ecee4facd1fc6b5a3d5da768fd1d7c4bfc34be6a8f0043e03e
 /*                     </table>*/
 /*                 </div>*/
 /*             </div>*/
+/* */
+/* */
 /*         {% endif %}*/
 /*     {% endfor %}*/
 /* {% endblock %}*/
